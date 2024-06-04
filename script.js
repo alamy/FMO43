@@ -29,7 +29,7 @@ function verificarLogin(event) {
 
     if (usuarioEncontrado) {
         // Redireciona para outra página se o login for bem-sucedido
-        window.location.href = 'https://www.exemplo.com'; // Substitua pela URL desejada
+        window.location.href = 'https://alamy.github.io/FMO43/Home.html'; // Substitua pela URL desejada
     } else {
         alert('Usuário ou palavra incorretos');
     }
