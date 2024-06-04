@@ -23,7 +23,7 @@ function verificarLogin(event) {
     // Obtém os valores inseridos no formulário
     const usuario = document.getElementById('usuario').value;
     const palavra = document.getElementById('palavra').value;
-
+    alert(usuario);
     // Verifica se o usuário existe no array
     const usuarioEncontrado = usuarios.find(u => u.usuario == usuario && u.palavra === palavra);
 

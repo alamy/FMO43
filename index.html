@@ -20,16 +20,17 @@
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-signin" id="loginForm">
       <img class="mb-4" src="img/logo.png" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Seja Bemvindo</h1>
       <label for="CIM" class="sr-only" >CIM</label>
-      <input type="text" id="usuario" class="form-control" placeholder="CIM">
+      <input type="text" id="usuario" class="form-control"name="usuario"  placeholder="CIM">
       <label for="palavra" class="sr-only">P:. de P:.</label>
-      <input type="password" id="palavra" class="form-control" placeholder="P:. de P:.">
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="enviar">Entrar</button>
+      <input type="password" id="palavra" class="form-control" name="palavra" placeholder="P:. de P:.">
+      <button class="btn btn-lg btn-primary btn-block" type="submit" id="loginForm">Entrar</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2024</p>
     </form>
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
+
 </html>
