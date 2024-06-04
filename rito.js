@@ -1,4 +1,4 @@
-const url = 'https://alamy.github.io/FMO43/img/RITO-SCHRO%CC%88DER.pdf'; // Coloque aqui a URL do seu PDF
+const url = 'https://alamy.github.io/FMO43/img/Cartilha.pdf'; // Coloque aqui a URL do seu PDF
 
 const pdfjsLib = window['pdfjs-dist/build/pdf'];
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
