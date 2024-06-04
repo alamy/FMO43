@@ -76,3 +76,24 @@
       flex: 1;
     }
   }
+
+  .historia {
+    background: url('img/historia.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .rito {
+    background: url('img/Rito.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .agenda {
+    background: url('img/o-livro.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .parceiros {
+    background: url('img/parceiros.jpg') no-repeat;
+    background-size: cover;
+    background-position: -160px 0px;
+  }
