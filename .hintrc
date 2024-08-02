@@ -8,6 +8,7 @@
       {
         "duplicate-id-active": "off"
       }
-    ]
+    ],
+    "apple-touch-icons": "off"
   }
 }
