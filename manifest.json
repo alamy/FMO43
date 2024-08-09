@@ -2,7 +2,7 @@
     "name": "FMO43",
     "short_name": "FMO43",
     "description": "FMO43 ",
-    "start_url": "/",
+    "start_url": "/FMO43/index.html",
     "display": "fullscreen",
     "background_color": "#ffffff",
     "theme_color": "#4CAF50",
