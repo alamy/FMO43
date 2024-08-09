@@ -3,18 +3,18 @@
     "short_name": "FMO43",
     "description": "FMO43 ",
     "start_url": "/",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#ffffff",
     "theme_color": "#4CAF50",
-    "orientation": "portrait-primary",
+    "orientation": "portrait",
     "icons": [
       {
-        "src": "img/logo.png",
+        "src": "img/icon192x192.png",
         "sizes": "192x192",
         "type": "image/png"
       },
       {
-        "src": "img/logo.png",
+        "src": "img/icon512x512.png",
         "sizes": "512x512",
         "type": "image/png"
       }
