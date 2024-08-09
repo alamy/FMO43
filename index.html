@@ -204,10 +204,10 @@
                 </g>
               </svg>
           </a></li>
-          <li class="nav-item" onclick="showDiv('home')">Home</li>
-          <li class="nav-item" onclick="showDiv('biblioteca')">Biblioteca</li>
-          <li class="nav-item" onclick="showDiv('trabalhos')">Trabalhos</li>
-          <li class="nav-item" onclick="showDiv('pilula')">Pilula</li>
+          <li class="nav-item" onclick="showDiv('home')"  data-bs-dismiss="offcanvas" aria-label="Close">Home</li>
+          <li class="nav-item" onclick="showDiv('biblioteca')"  data-bs-dismiss="offcanvas" aria-label="Close">Biblioteca</li>
+          <li class="nav-item" onclick="showDiv('trabalhos')"  data-bs-dismiss="offcanvas" aria-label="Close">Trabalhos</li>
+          <li class="nav-item" onclick="showDiv('pilula')"  data-bs-dismiss="offcanvas" aria-label="Close">Pilula</li>
          
         </ul>
       </div>
@@ -225,48 +225,51 @@
   <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
     <div class="bg-info-subtle me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 py-3">
-        <h2 class="display-5">A historia</h2>
-        <p class="lead">Nossa Historia.</p>
+        <h2 class="display-5">A Biblioteca</h2>
+        <p class="lead">Literaturas disponiveis.</p>
       </div>
-      <a href="historia.html" class="bg-body-tertiary shadow-sm mx-auto historia" style="width: 80%; display:block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
+      <a  onclick="showDiv('biblioteca')" href="#" class="bg-body-tertiary shadow-sm mx-auto historia" style="width: 80%; display:block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
     </div>
     <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
       <div class="my-3 p-3">
-        <h2 class="display-5">O Rito</h2>
-        <p class="lead">Acompanhe a reunião.</p>
+        <h2 class="display-5">Trabalhos</h2>
+        <p class="lead">Trabalhos disponível.</p>
       </div>
-      <a href="rito.html" class="bg-dark shadow-sm mx-auto rito" style="width: 80%; display: block ; height: 300px; border-radius: 21px 21px 0 0;"></a>
+      <a  onclick="showDiv('trabalhos')" href="#" class="bg-dark shadow-sm mx-auto rito" style="width: 80%; display: block ; height: 300px; border-radius: 21px 21px 0 0;"></a>
+    </div>
+    <div class="bg-warning me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="my-3 p-3">
+        <h2 class="display-5">Pilula</h2>
+        <p class="lead">Veja nosso calendario .</p>
+      </div>
+      <a  onclick="showDiv('pilula')"  href="#" class="bg-dark shadow-sm mx-auto agenda" style="width: 80%; display: block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
     </div>
   </div>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-    <div class="bg-warning me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Agenda</h2>
-        <p class="lead">Veja nosso calendario .</p>
-      </div>
-      <a href="calendario.html" class="bg-dark shadow-sm mx-auto agenda" style="width: 80%; display: block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
-    </div>
-    <div class="bg-secondary-subtle me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">Parceiros</h2>
-        <p class="lead">Ir:. e Parceiros.</p>
-      </div>
-      <a class="bg-body-tertiary shadow-sm mx-auto parceiros" href="parceiros.html" style="width: 80%; display: block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
-    </div>
-  </div>
 </section>
 
   <section id="biblioteca">
-    teste
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">CARTILHA DO RITO SCHRODER </h5>
+        <p class="card-text">O RITO SCHRÖDER </p>
+        <a onclick="window.open('img/Cartilha.pdf', '_blank')" href="#" target="_blank" class="btn btn-primary">Leia</a>
+      </div>
+    </div>
   </section>
 
   <section id="trabalhos">
-    teste 432423
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">M:. P:. </h5>
+        <p class="card-text">Alamy Neto:. </p>
+        <a onclick="window.open('img/Martelo_Pontiagudo.pdf', '_blank')" href="#" target="_blank" class="btn btn-primary">Leia</a>
+      </div>
+    </div>
   </section>
 
   <section id="pilula">
-    teste sdfsdfsdf
+ <img src="img/pilula.jpg" alt="pilula" />
   </section>
 
 </main>
@@ -289,6 +292,7 @@
   </div>
 </footer>
 <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="rito.js"></script>
 <script>
  function showDiv(divId) {
   let home = document.getElementById('home');

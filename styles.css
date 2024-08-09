@@ -97,3 +97,20 @@
     background-size: cover;
     background-position: -160px 0px;
   }
+
+  .menu {
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    height: 50px;
+    width: 100%;
+    top: 100vh
+  }
+  .menu li {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+#pilula img {
+  width: 100%;
+}
