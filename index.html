@@ -204,10 +204,10 @@
                 </g>
               </svg>
           </a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html">Home aaa</a></li>
-          <li class="nav-item"><a class="nav-link" href="historia.html">Biblioteca</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Trabalhos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Perfil</a></li>
+          <li class="nav-item" onclick="showDiv('home')">Home</li>
+          <li class="nav-item" onclick="showDiv('biblioteca')">Biblioteca</li>
+          <li class="nav-item" onclick="showDiv('trabalhos')">Trabalhos</li>
+          <li class="nav-item" onclick="showDiv('pilula')">Pilula</li>
          
         </ul>
       </div>
@@ -216,21 +216,8 @@
 </nav>
 
 <main>
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-header">
-    <!-- <div class="col-md-6 p-lg-5 mx-auto my-5">
-      <h1 class="display-3 fw-bold">Designed for engineers</h1>
-      <h3 class="fw-normal text-muted mb-3">Build anything you want with Aperture</h3>
-      <div class="d-flex gap-3 justify-content-center lead fw-normal">
-        <a class="icon-link" href="#">
-          Learn more
-          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-        </a>
-        <a class="icon-link" href="#">
-          Buy
-          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-        </a>
-      </div>
-    </div> -->
+  <section id="home">
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-header" >
     <div class="product-device shadow-sm d-none d-md-block"></div>
     <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
   </div>
@@ -268,6 +255,20 @@
       <a class="bg-body-tertiary shadow-sm mx-auto parceiros" href="parceiros.html" style="width: 80%; display: block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
     </div>
   </div>
+</section>
+
+  <section id="biblioteca">
+    teste
+  </section>
+
+  <section id="trabalhos">
+    teste 432423
+  </section>
+
+  <section id="pilula">
+    teste sdfsdfsdf
+  </section>
+
 </main>
 
 <footer class="container py-5">
@@ -288,6 +289,36 @@
   </div>
 </footer>
 <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+ function showDiv(divId) {
+  let home = document.getElementById('home');
+  let biblioteca = document.getElementById('biblioteca');
+  let trabalhos = document.getElementById('trabalhos');
+  let pilula = document.getElementById('pilula');
+
+  // Oculta todas as divs
+  home.style.display = 'none';
+  biblioteca.style.display = 'none';
+  trabalhos.style.display = 'none';
+  pilula.style.display = 'none';
+
+  // Exibe a div correspondente ao ID passado
+  switch (divId) {
+    case 'home':
+      home.style.display = 'block';
+      break;
+    case 'biblioteca':
+      biblioteca.style.display = 'block';
+      break;
+    case 'trabalhos':
+      trabalhos.style.display = 'block';
+      break;
+    case 'pilula':
+      pilula.style.display = 'block';
+      break;
+  }
+}
+</script>
 
     </body>
 </html>
