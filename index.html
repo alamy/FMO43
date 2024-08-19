@@ -1,243 +1,516 @@
-
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="/docs/5.3/assets/js/color-modes.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Alamy Neto">
-    <meta name="generator" content="Flaviano Mendes de Oliveira">
-    <title>F:.M:.O:.43</title>
+<head>
+  <script src="/docs/5.3/assets/js/color-modes.js"></script>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Alamy Neto">
+  <meta name="generator" content="Flaviano Mendes de Oliveira">
+  <title>F:.M:.O:.43</title>
 
-    
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
-<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- Favicons -->
-<link rel="apple-touch-icon" href="img/logo.png" sizes="180x180">
-<link rel="icon" href="img/logo.png" sizes="32x32" type="image/png">
-<link rel="icon" href="img/logo.png" sizes="16x16" type="image/png">
-<link rel="mask-icon" href="img/logo.png" color="#712cf9">
-<link rel="icon" href="img/logo.png">
-<meta name="theme-color" content="#712cf9">
- <!-- Link para o Manifest -->
- <link rel="manifest" href="manifest.json">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/product/">
 
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+
+  <link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="img/logo.png" sizes="180x180">
+  <link rel="icon" href="img/logo.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="img/logo.png" sizes="16x16" type="image/png">
+  <link rel="mask-icon" href="img/logo.png" color="#712cf9">
+  <link rel="icon" href="img/logo.png">
+  <meta name="theme-color" content="#712cf9">
+  <!-- Link para o Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    .nav-item {
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
 
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
-
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="styles.css" rel="stylesheet">
-  </head>
-  <body>
-   
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+    .none {
+      display: none;
+    }
+    #historia {
+      padding: 0px 14px;
+      text-align: justify;
+    }
+  </style>
 
 
+  <!-- Custom styles for this template -->
+  <link href="styles.css" rel="stylesheet">
+</head>
 
-<nav class="navbar navbar-expand-md bg-white sticky-top " data-bs-theme="white">
-  <div class="container">
-    <a class="navbar-brand d-md-none" href="#">
+<body>
+
+
+
+
+  <nav class="navbar navbar-expand-md bg-white sticky-top " data-bs-theme="white">
+    <div class="container">
+      <a class="navbar-brand d-md-none" href="#">
+
+        <img src="img/logo.png" alt="Flaviano " width="50px" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+        aria-controls="offcanvas" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon text-dark"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasLabel">F:. M:. O:. 43</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav flex-grow-1 justify-content-between">
+            <li class="nav-item"><a class="nav-link" href="#">
+                <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                  <title>Cartola</title>
+                  <g fill="none" stroke="black" stroke-width="2">
+                    <ellipse cx="50" cy="85" rx="35" ry="10" fill="#000" />
+                    <path d="M25 40 Q50 20, 75 40 L75 75 Q50 65, 25 75 Z" fill="#000" />
+                    <ellipse cx="50" cy="40" rx="25" ry="8" fill="#000" />
+                  </g>
+                </svg>
+              </a></li>
+            <li class="nav-item" onclick="showDiv('home')" data-bs-dismiss="offcanvas" aria-label="Close">Home</li>
+            <li class="nav-item" onclick="showDiv('galeria')" data-bs-dismiss="offcanvas" aria-label="Close">Galeria V:.
+              M:.</li>
+            <li class="nav-item" onclick="showDiv('historia')" data-bs-dismiss="offcanvas" aria-label="Close">História
+            </li>
+            <li class="nav-item" onclick="showDiv('biblioteca')" data-bs-dismiss="offcanvas" aria-label="Close">
+              Biblioteca</li>
+            <li class="nav-item" onclick="showDiv('trabalhos')" data-bs-dismiss="offcanvas" aria-label="Close">Trabalhos
+            </li>
+            <li class="nav-item" onclick="showDiv('pilula')" data-bs-dismiss="offcanvas" aria-label="Close">Pilula</li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home">
+      <div class="position-relative overflow-hidden p-0 p-md-0 m-md-3 text-center bg-header">
+        <div class="product-device shadow-sm d-none d-md-block"></div>
+        <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+      </div>
+
      
-<img src="img/logo.png"  alt="Flaviano " width="50px"/>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon text-dark" ></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">F:. M:. O:. 43</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav flex-grow-1 justify-content-between">
-          <li class="nav-item"><a class="nav-link" href="#">
-            <svg width="20" height="20" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <title>Cartola</title>
-                <g fill="none" stroke="black" stroke-width="2">
-                  <ellipse cx="50" cy="85" rx="35" ry="10" fill="#000"/>
-                  <path d="M25 40 Q50 20, 75 40 L75 75 Q50 65, 25 75 Z" fill="#000"/>
-                  <ellipse cx="50" cy="40" rx="25" ry="8" fill="#000"/>
-                </g>
-              </svg>
-          </a></li>
-          <li class="nav-item" onclick="showDiv('home')"  data-bs-dismiss="offcanvas" aria-label="Close">Home</li>
-          <li class="nav-item" onclick="showDiv('biblioteca')"  data-bs-dismiss="offcanvas" aria-label="Close">Biblioteca</li>
-          <li class="nav-item" onclick="showDiv('trabalhos')"  data-bs-dismiss="offcanvas" aria-label="Close">Trabalhos</li>
-          <li class="nav-item" onclick="showDiv('pilula')"  data-bs-dismiss="offcanvas" aria-label="Close">Pilula</li>
-         
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
 
-<main>
-  <section id="home">
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-header" >
-    <div class="product-device shadow-sm d-none d-md-block"></div>
-    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-  </div>
+      <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
+        <div class="bg-info-subtle me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 py-3">
+            <h2 class="display-5">A Biblioteca</h2>
+            <p class="lead">Literaturas disponiveis.</p>
+          </div>
+          <a onclick="showDiv('biblioteca')" href="#" class="bg-body-tertiary shadow-sm mx-auto historia"
+            style="width: 80%; display:block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
+        </div>
+        <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Trabalhos</h2>
+            <p class="lead">Trabalhos disponível.</p>
+          </div>
+          <a onclick="showDiv('trabalhos')" href="#" class="bg-dark shadow-sm mx-auto rito"
+            style="width: 80%; display: block ; height: 300px; border-radius: 21px 21px 0 0;"></a>
+        </div>
+        <div class="bg-warning me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+          <div class="my-3 p-3">
+            <h2 class="display-5">Pilula</h2>
+            <p class="lead">Veja nosso calendario .</p>
+          </div>
+          <a onclick="showDiv('pilula')" href="#" class="bg-dark shadow-sm mx-auto agenda"
+            style="width: 80%; display: block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
+        </div>
+      </div>
+    </section>
 
-  <div class="d-md-flex" style="padding: 0 10px; margin: 0 10px;">
-    <h1  style="margin-top: 10px; text-align: center;">Galeria dos V:. M:. I:.</h1>
-    <div class="card" style="width: 45%; float: left; margin-right: 20px;">
-      <img class="card-img-top" src="img/danilo.png" alt="Danilo">
-      <div class="card-body">
-        <h6 class="card-title">Danilo Carlos Silva Santos</h6>
-        <p class="card-text">2024/2025  </p>
+    <div id="galeria" class="d-md-flex none" style="padding: 0 10px; margin: 0 10px;">
+      <h1 style="margin-top: 10px; text-align: center;">Galeria dos V:. M:. I:.</h1>
+      <div class="card" style="width: 45%; float: left; margin-right: 20px;">
+        <img class="card-img-top" src="img/danilo.png" alt="Danilo">
+        <div class="card-body">
+          <h6 class="card-title">Danilo Carlos Silva Santos</h6>
+          <p class="card-text">2024/2025 </p>
+        </div>
+      </div>
+      <div class="card" style="width: 45%; ">
+        <img class="card-img-top" src="img/Jonas.jpg" alt="Jonas">
+        <div class="card-body">
+          <h6 class="card-title">Jonas Adriano P:. da Silva</h6>
+          <p class="card-text">2023/2024</p>
+        </div>
       </div>
     </div>
-    <div class="card" style="width: 45%; ">
-      <img class="card-img-top" src="img/Jonas.jpg" alt="Jonas">
-      <div class="card-body">
-        <h6 class="card-title">Jonas Adriano P:. da Silva</h6>
-        <p class="card-text">2023/2024</p>
+
+    <section id="historia" class="none">
+      <h4 class="card-title">As Origens</h4>
+      <p>1737 – 06/dez - O Ir. Charles Sarry da Gr.
+        Loja de Londres funda a “Loja de
+        Hamburgo”, depois denominada
+        “Absalom” – a mais antiga Loja alemã e
+        uma das mais antigas do mundo (prestes a
+        completar 281 anos)
+        1738 – A ABSALOM Inicia o Príncipe
+        Frederico da Prússia</p>
+
+      <p>
+        1737 – 06/dez - O Ir. Charles Sarry da Gr.
+        Loja de Londres funda a “Loja de
+        Hamburgo”, depois denominada
+        “Absalom” – a mais antiga Loja alemã e
+        uma das mais antigas do mundo (prestes a
+        completar 281 anos)
+        1738 – A ABSALOM Inicia o Príncipe
+        Frederico da Prússia
+        As Origens
+        1740 – Coroação de Frederico II, depois
+        chamado O Grande
+        - Frederico torna pública sua condição de
+        maçom e autoriza as Lojas a se reunirem
+        - O “déspota esclarecido” e a influência do
+        Iluminismo: “cada um deve viver de
+        acordo com as suas próprias convicções”;
+        as Leis valem para todos...</p>
+
+      <p>
+        1765/66 – As Lojas “Absalom” e “Aos Três
+        Globos” adotam o Rito da Estrita
+        Observância Templária (de origem
+        francesa, com 7 graus) e abandonam o
+        Ritual Inglês (da G.L. de Londres de 1717,
+        Grande Loja “dos Modernos”, que
+        completou 300 anos em 24/06/2017)
+      </p>
+
+      <p>
+
+        1765/66 – As Lojas “Absalom” e “Aos Três
+        Globos” adotam o Rito da Estrita
+        Observância Templária (de origem
+        francesa, com 7 graus) e abandonam o
+        Ritual Inglês (da G.L. de Londres de 1717,
+        Grande Loja “dos Modernos”, que
+        completou 300 anos em 24/06/2017)
+        As Origens
+        1774 – Iniciação de
+        Schröder na Loja
+        Emanuel, apresentado
+        pelo Ir. Bode, um dos
+        mais respeitados maçons
+        do seu tempo,
+        Schröder é aceito “por
+        aclamação”
+      </p>
+
+      <p>
+        1782 – Convento de
+        Wilhelmsbad determina:
+        - o fim da Estrita
+        Observância
+        - a criação do R.E.R.
+        - o retorno ao “Ritual
+        Inglês”
+      </p>
+      <hr />
+      <h4>Os Rituais</h4>
+      <p>
+        1782 – Convento de
+        Wilhelmsbad determina:
+        - o fim da Estrita
+        Observância
+        - a criação do R.E.R.
+        - o retorno ao “Ritual
+        Inglês”
+        As Origens
+        Bode, Garante
+        de Schröder, ex-G.M.
+        Adj., ex-V.M. Absalom
+        Alto Oficial da S.O.
+        1788 – Schröder reúne
+        material para pesquisa:
+        TDK (1760, Antigos),
+        MD (1730, Modernos) e
+        o texto do Ritual da
+        G.L. de Londres ditado
+        pelo Ir. von Gräfe
+      </p>
+
+      <p>
+        No prefácio da edição de 1815 do seu livro
+        "Materialien zur Geschichte der Freimaurerei"
+        (Materiais para a História da Franco-Maçonaria),
+        Schröder aponta que Three Distinct Knocks (TDK) é
+        o ritual que é trabalhado até hoje em dia por todas
+        as velhas Lojas Inglesas na Grã-Bretanha, Ásia,
+        África e América
+        Acerca de Prichard (MD), ele diz que este foi o
+        primeiro desvio do mais velho, isto é do “TDK”,
+        mas que tinha sido usado pela maioria das Lojas
+        Alemãs (aqui ele se equivoca, pois o MD é anterior)
+      </p>
+      <hr />
+      <h4>O Pensamento</h4>
+      <p>
+        1789 – Schröder,
+        reassume o cargo de
+        V.M. da Loja Emanuel e
+        faz veemente discurso
+        aos seus Irmãos: Com
+        profunda convicção considero a
+        Franco-Maçonaria uma
+        Irmandade verdadeira e benemérita
+      </p>
+      <p>
+        1789 – Schröder: ... Em resumo, é
+        prudente precavermo-nos contra tais absurdos (o
+        fim dos símbolos) e preocuparmo-nos com a
+        formação do homem. É necessário ainda
+        acrescentar o bem estar do ser humano a esta
+        nobre finalidade. É preciso que cuidemos para que
+        em nossa Constituição e em nossos rituais não haja
+        mudanças substanciais muito menos supressões,
+        para não comprometermos toda a Franco-
+        Maçonaria e os nossos solenes e voluntários
+        compromissos. – F. L. Schröder , 03 de setembro de
+        1789
+      </p>
+      <p>
+        1799 – Schröder, G.M. Adj., “caminho livre”
+        para novo ritual
+        - Ir. Herder colabora na revisão
+        29/06/1801 – A Assembleia da G. L. de
+        Hamburgo aprova o Ritual que é recebido
+        com entusiasmo pelas Lojas alemãs
+      </p>
+      <hr />
+      <h4>
+        Filosofia de Schröder
+      </h4>
+      <p>
+        Em uma síntese do pensamento de dois
+        grandes Filósofos, maçons e amigos de
+        Schröder, podemos concluir que, para
+        eles, a Maçonaria visa atingir o propósito
+        humanista de superar as divisões entre os
+        homens, seja por meios racionais
+        (Lessing), seja por meios emocionais e
+        simbólicos (Herder)
+      </p>
+      <p>
+        União de homens virtuosos para em conjunto
+        estudar os símbolos da Arte da Construção e
+        desenvolver a Caridade e o Amor Fraternal
+        Adaptação à cultura alemã e ao “espírito do seu
+        tempo” (Zeitgeist)
+      </p>
+      <p>
+        Para a compreensão do Ritual Schroder original,
+        chama-se a atenção ao seguinte: Schroder
+        entendia a Maçonaria como uma associação de
+        virtudes e não como uma sociedade esotérica.
+        Assim, no Ritual de 1816, aparece claramente o
+        caráter da preleção, enquanto que no Ritual da
+        Grande Loja dos Maçons Antigos, Livres e
+        Aceitos da Alemanha o ponto de gravidade se
+        situa na vivencia.
+        Extrato do prefácio do Ritual Schröder de 1992 da G.L.
+        A.F.u.A.M. v.D., que adota um Ritual de origem francesa,
+        semelhante ao R.E.A.A., mas que não é o R.E.A.A.
+      </p>
+      <hr />
+      <h4>Idealismo Alemão</h4>
+      <p>
+        Conceitua-se idealismo como a teoria filosófica que abrange todas
+        as teorias das ideias, desde PLATÃO.
+        ... Afirma-se, desta maneira, que a unidade fundamental das
+        concepções e sistemas filosóficos que tradicionalmente se veio a
+        denominar Idealismo Alemão é oriunda de uma mescla entre o
+        racionalismo, o empirismo britânico, o iluminismo francês e o
+        romantismo. ...
+        Como explica Margaret Jacob, a vida nas lojas maçônicas poderia
+        ser vista como um espaço onde novas concepções de cidadania
+        podiam ser experimentadas e discutidas livremente, sem os perigos
+        da discussão pública ou os constrangimentos das divisões
+        estamentais. As ideias de não-maçons como Rousseau ou Kant
+        podiam ser incorporadas de modo inócuo à sua ideologia, deste
+        modo difundindo-as como uma caixa de ressonância oculta e
+        paralela à sociedade civil.
+        <br />
+        <i>r. Rui Aurélio de Lacerda Badaró, M.M. da Justa e Perfeita Loja de São João, 680, Or. de Sorocaba/SP,
+          GLESP, e membro do Colégio de Estudos do Rito Schröder Ir. Gouveia no VII SNRS-KMH, em nov./2016</i>
+      </p>
+      <p>
+        Nesse contexto de uma Maçonaria voltada às altas
+        indagações filosóficas que permeava a reforma da
+        Fraternidade na Alemanha é que se inscreve a construção do
+        sistema de ensino de Schröder, cujo principal objetivo era um
+        realinhamento com as práticas maçônicas inglesas,
+        restaurando a verdadeira e antiga Maçonaria, ou seja, sem
+        os enxertos de misticismo, rosacrucianismo, iluminados,
+        cavalheirismo e altos graus que não integravam a Maçonaria
+        em seu início. Assim, o principal substrato para a construção
+        de um novo sistema de ensino maçônico por Schröder foi o
+        pensamento idealista, uma das principais orientações
+        filosóficas da sua época.
+        <br />
+        <i>Ir. Rui Aurélio de Lacerda Badaró no VII SNRS-KMH, em novembro de 2016</i>
+      </p>
+      <hr />
+      <h4>Humanismo e Humanitarismo</h4>
+      <p>
+        Esta dupla de características
+        complementares deve ser estudada e entendida
+        por todos os maçons, especialmente os que
+        praticam o Rito Schröder:
+        <br />
+        - o Humanismo é um ponto de vista artístico,
+        científico e filosófico que tem o ser humano
+        como referência doutrinária e de conduta.<br />
+        - o Humanitarismo é a doutrina moral assentada
+        nos princípios da filantropia, da não
+        maleficência e da beneficência.
+      </p>
+      <p>
+        Podemos concluir, pela leitura de seus rituais,
+        que sua obra contém elementos dessa época
+        única da História. Se por um lado nota-se a
+        influência iluminista por seu profundo
+        humanismo e o uso de linguagem mais
+        elaborada, superior a outros rituais da época;
+        também se destaca a busca por elementos
+        autênticos, pela essência da instituição, e a
+        preocupação com a educação e o
+        aprimoramento do ser humano, presentes na
+        obra de Rousseau.
+        <br />
+        <i>*Ir. Marcos Roberto Marini, Ex-V.M. da A.R.L.S. “Aôr e Harmonia de Sobradinho” N°
+          116 - Rito Schröder</i>
+      </p>
+    </section>
+
+
+    <section id="biblioteca" class="none">
+      <div class="card" style="width: 100vw;">
+        <div class="card-body">
+          <h5 class="card-title">CARTILHA DO RITO SCHRODER </h5>
+          <p class="card-text">O RITO SCHRÖDER </p>
+          <a onclick="window.open('img/Cartilha.pdf')" href="#" target="_blank" class="btn btn-primary">Leia</a>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3" style="margin-top: 20px;">
-    <div class="bg-info-subtle me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 py-3">
-        <h2 class="display-5">A Biblioteca</h2>
-        <p class="lead">Literaturas disponiveis.</p>
+    <section id="trabalhos" class="none">
+      <div class="card" style="width: 100vw">
+        <div class="card-body">
+          <h5 class="card-title">M:. P:. </h5>
+          <p class="card-text">Alamy Neto:. </p>
+          <a onclick="window.open('img/Martelo_Pontiagudo.pdf', '_blank')" href="#" target="_blank"
+            class="btn btn-primary">Leia</a>
+        </div>
       </div>
-      <a  onclick="showDiv('biblioteca')" href="#" class="bg-body-tertiary shadow-sm mx-auto historia" style="width: 80%; display:block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
-    </div>
-    <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Trabalhos</h2>
-        <p class="lead">Trabalhos disponível.</p>
+    </section>
+
+    <section id="pilula" class="none">
+      <img src="img/pilula.jpg" alt="pilula" />
+    </section>
+
+  </main>
+
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img src="img/logo.png" title="Flaviano" width="60px" />
+        <small class="d-block mb-3 text-body-secondary">&copy; 2017–2024</small>
       </div>
-      <a  onclick="showDiv('trabalhos')" href="#" class="bg-dark shadow-sm mx-auto rito" style="width: 80%; display: block ; height: 300px; border-radius: 21px 21px 0 0;"></a>
-    </div>
-    <div class="bg-warning me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-      <div class="my-3 p-3">
-        <h2 class="display-5">Pilula</h2>
-        <p class="lead">Veja nosso calendario .</p>
-      </div>
-      <a  onclick="showDiv('pilula')"  href="#" class="bg-dark shadow-sm mx-auto agenda" style="width: 80%; display: block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
-    </div>
-  </div>
-
-</section>
-
-  <section id="biblioteca">
-    <div class="card" style="width: 100vw;">
-      <div class="card-body">
-        <h5 class="card-title">CARTILHA DO RITO SCHRODER </h5>
-        <p class="card-text">O RITO SCHRÖDER </p>
-        <a onclick="window.open('img/Cartilha.pdf')" href="#" target="_blank" class="btn btn-primary">Leia</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="trabalhos">
-    <div class="card" style="width: 100vw">
-      <div class="card-body">
-        <h5 class="card-title">M:. P:. </h5>
-        <p class="card-text">Alamy Neto:. </p>
-        <a onclick="window.open('img/Martelo_Pontiagudo.pdf', '_blank')" href="#" target="_blank" class="btn btn-primary">Leia</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="pilula">
-    <img src="img/pilula.jpg" alt="pilula" />
-  </section>
-
-</main>
-
-<footer class="container py-5">
-  <div class="row">
-    <div class="col-12 col-md">
-      <img src="img/logo.png"  title="Flaviano" width="60px"/>
-      <small class="d-block mb-3 text-body-secondary">&copy; 2017–2024</small>
-    </div>
-    <!-- <div class="col-6 col-md">
+      <!-- <div class="col-6 col-md">
       <h5>Contatos</h5>
       <ul class="list-unstyled text-small">
         <li><a class="link-secondary text-decoration-none" href="#">(81) 9999-9090</a></li>
@@ -246,44 +519,55 @@
         <li><a class="link-secondary text-decoration-none" href="#">SOS@flaviano.com.br</a></li>
       </ul>
     </div> -->
-  </div>
-</footer>
-<script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="rito.js"></script>
-<script>
+    </div>
+  </footer>
+  <script src="https://getbootstrap.com/docs/5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="rito.js"></script>
+  <script>
 
-  biblioteca.style.display = 'none';
-  trabalhos.style.display = 'none';
-  pilula.style.display = 'none';
- function showDiv(divId) {
-  let home = document.getElementById('home');
-  let biblioteca = document.getElementById('biblioteca');
-  let trabalhos = document.getElementById('trabalhos');
-  let pilula = document.getElementById('pilula');
 
-  // Oculta todas as divs
-  home.style.display = 'none';
-  biblioteca.style.display = 'none';
-  trabalhos.style.display = 'none';
-  pilula.style.display = 'none';
+    function showDiv(divId) {
+      let home = document.getElementById('home');
+      let biblioteca = document.getElementById('biblioteca');
+      let trabalhos = document.getElementById('trabalhos');
+      let pilula = document.getElementById('pilula');
+      let galeria = document.getElementById('galeria');
+      let historia = document.getElementById('historia');
 
-  // Exibe a div correspondente ao ID passado
-  switch (divId) {
-    case 'home':
-      home.style.display = 'block';
-      break;
-    case 'biblioteca':
-      biblioteca.style.display = 'block';
-      break;
-    case 'trabalhos':
-      trabalhos.style.display = 'block';
-      break;
-    case 'pilula':
-      pilula.style.display = 'block';
-      break;
-  }
-}
-</script>
 
-    </body>
+      // Oculta todas as divs
+      home.style.display = 'none';
+      biblioteca.style.display = 'none';
+      trabalhos.style.display = 'none';
+      pilula.style.display = 'none';
+      galeria.style.display = 'none';
+      historia.style.display = 'none';
+      // Exibe a div correspondente ao ID passado
+      switch (divId) {
+        case 'home':
+          home.style.display = 'block';
+          break;
+        case 'biblioteca':
+          biblioteca.style.display = 'block';
+          break;
+        case 'trabalhos':
+          trabalhos.style.display = 'block';
+          break;
+        case 'pilula':
+          pilula.style.display = 'block';
+          break;
+        case 'galeria':
+        galeria.style.display = 'block';
+          break;
+        case 'historia':
+        historia.style.display = 'block';
+          break;
+      }
+    }
+  </script>
+
+</body>
+
 </html>
