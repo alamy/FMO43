@@ -42,6 +42,11 @@
 
     .nav-item {
       font-size: 1.2rem;
+      color:#000
+    }
+    .nav-item a {
+      text-decoration: none;
+      color:#000
     }
 
     @media (min-width: 768px) {
@@ -163,9 +168,9 @@
               M:.</li>
             <li class="nav-item" onclick="showDiv('historia')" data-bs-dismiss="offcanvas" aria-label="Close">História
             </li>
-            <li class="nav-item" onclick="showDiv('biblioteca')" data-bs-dismiss="offcanvas" aria-label="Close">
-              Biblioteca</li>
-            <li class="nav-item" onclick="showDiv('trabalhos')" data-bs-dismiss="offcanvas" aria-label="Close">Trabalhos
+            <li class="nav-item" data-bs-dismiss="offcanvas" aria-label="Close">
+              <a href="https://drive.google.com/drive/folders/14IHt5NGieyxh2Mxb1N6gRFHF_065JTsP?usp=drive_link">Biblioteca</a> </li>
+            <li class="nav-item" data-bs-dismiss="offcanvas" aria-label="Close"><a href="https://drive.google.com/drive/folders/1-CAEw5dMB6s6jINrfhqYsvHNVwZPoQkc?usp=drive_link">Trabalhos</a>
             </li>
             <li class="nav-item" onclick="showDiv('pilula')" data-bs-dismiss="offcanvas" aria-label="Close">Pilula</li>
 
@@ -190,7 +195,7 @@
             <h2 class="display-5">A Biblioteca</h2>
             <p class="lead">Literaturas disponiveis.</p>
           </div>
-          <a onclick="showDiv('biblioteca')" href="#" class="bg-body-tertiary shadow-sm mx-auto historia"
+          <a href="https://drive.google.com/drive/folders/14IHt5NGieyxh2Mxb1N6gRFHF_065JTsP?usp=drive_link" class="bg-body-tertiary shadow-sm mx-auto historia"
             style="width: 80%; display:block ;height: 300px; border-radius: 21px 21px 0 0;"></a>
         </div>
         <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -198,7 +203,7 @@
             <h2 class="display-5">Trabalhos</h2>
             <p class="lead">Trabalhos disponível.</p>
           </div>
-          <a onclick="showDiv('trabalhos')" href="#" class="bg-dark shadow-sm mx-auto rito"
+          <a href="https://drive.google.com/drive/folders/1-CAEw5dMB6s6jINrfhqYsvHNVwZPoQkc?usp=drive_link" class="bg-dark shadow-sm mx-auto rito"
             style="width: 80%; display: block ; height: 300px; border-radius: 21px 21px 0 0;"></a>
         </div>
         <div class="bg-warning me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -477,27 +482,6 @@
     </section>
 
 
-    <section id="biblioteca" class="none">
-      <div class="card" style="width: 100vw;">
-        <div class="card-body">
-          <h5 class="card-title">CARTILHA DO RITO SCHRODER </h5>
-          <p class="card-text">O RITO SCHRÖDER </p>
-          <a onclick="window.open('img/Cartilha.pdf')" href="#" target="_blank" class="btn btn-primary">Leia</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="trabalhos" class="none">
-      <div class="card" style="width: 100vw">
-        <div class="card-body">
-          <h5 class="card-title">M:. P:. </h5>
-          <p class="card-text">Alamy Neto:. </p>
-          <a onclick="window.open('img/Martelo_Pontiagudo.pdf', '_blank')" href="#" target="_blank"
-            class="btn btn-primary">Leia</a>
-        </div>
-      </div>
-    </section>
-
     <section id="pilula" class="none">
       <img src="img/pilula.jpg" alt="pilula" />
     </section>
@@ -530,8 +514,6 @@
 
     function showDiv(divId) {
       let home = document.getElementById('home');
-      let biblioteca = document.getElementById('biblioteca');
-      let trabalhos = document.getElementById('trabalhos');
       let pilula = document.getElementById('pilula');
       let galeria = document.getElementById('galeria');
       let historia = document.getElementById('historia');
@@ -539,8 +521,6 @@
 
       // Oculta todas as divs
       home.style.display = 'none';
-      biblioteca.style.display = 'none';
-      trabalhos.style.display = 'none';
       pilula.style.display = 'none';
       galeria.style.display = 'none';
       historia.style.display = 'none';
@@ -548,12 +528,6 @@
       switch (divId) {
         case 'home':
           home.style.display = 'block';
-          break;
-        case 'biblioteca':
-          biblioteca.style.display = 'block';
-          break;
-        case 'trabalhos':
-          trabalhos.style.display = 'block';
           break;
         case 'pilula':
           pilula.style.display = 'block';
