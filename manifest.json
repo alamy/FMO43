@@ -1,0 +1,23 @@
+{
+  "name": "FMO43 Social",
+  "short_name": "FMO43",
+  "description": "Rede social e biblioteca maçônica FMO43",
+  "start_url": "Home.html",
+  "display": "standalone",
+  "background_color": "#1976d2",
+  "theme_color": "#1976d2",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "pt-BR"
+}
