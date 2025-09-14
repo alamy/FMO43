@@ -10,6 +10,51 @@
       body {
         background: #181a20;
         color: #f1f1f1;
+        min-height: 100vh;
+        background-image: linear-gradient(rgba(24,26,32,0.92), rgba(24,26,32,0.97)), url('img/Rito.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: background 0.7s;
+      }
+      .form-signin {
+        background: rgba(20, 20, 24, 0.82);
+        border-radius: 18px;
+        box-shadow: 0 4px 32px rgba(0,0,0,0.45);
+        padding: 32px 18px 24px 18px;
+        margin-top: 48px;
+        max-width: 340px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .form-signin h1, .form-signin label, .form-signin input, .form-signin button {
+        color: #f1f1f1;
+      }
+      .form-signin h1 {
+        letter-spacing: 1.5px;
+        color: #fbc02d;
+        text-shadow: 0 2px 8px #000a;
+      }
+      .form-signin input {
+        background: #181a20;
+        border: 1.5px solid #23242b;
+      }
+      .form-signin input:focus {
+        border: 1.5px solid #fbc02d;
+      }
+      .form-signin button {
+        background: #23242b;
+        color: #fbc02d;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        box-shadow: 0 2px 8px #0005;
+        transition: background 0.2s, color 0.2s;
+      }
+      .form-signin button:hover {
+        background: #fbc02d;
+        color: #181a20;
       }
       .login-input {
         background: #101014;
@@ -37,13 +82,14 @@
 <body class="text-center login-center">
   <form class="form-signin" id="loginForm" autocomplete="off">
     <img class="mb-4" src="img/logo.png" alt="Logo" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Seja Bem-vindo</h1>
-  <label for="cim" class="sr-only">CIM (opcional)</label>
-  <input type="text" id="cim" class="form-control login-input" placeholder="CIM (opcional)">
-  <label for="palavra" class="sr-only">Palavra-passe</label>
-  <input type="password" id="palavra" class="form-control login-input" placeholder="Digite a palavra secreta" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" id="enviar">Entrar</button>
-    <p class="mt-5 mb-3 text-muted">&copy; 2017-2025</p>
+    <h1 class="h3 mb-3 font-weight-normal">Willkommen</h1>
+    <label for="cim" class="sr-only">CIM (opcional)</label>
+    <input type="text" id="cim" class="form-control login-input" placeholder="CIM (opcional)">
+    <label for="palavra" class="sr-only">Palavra-passe</label>
+    <input type="password" id="palavra" class="form-control login-input" placeholder="Digite a palavra secreta" required>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" id="enviar">Wer ist da?</button>
+    <img src="img/Rito.jpg" alt="Rito" style="display:block;margin:24px auto 8px auto;max-width:120px;width:80%;border-radius:10px;box-shadow:0 2px 12px #0007;opacity:0.92;">
+    <p class="mt-4 mb-2 text-muted">&copy; 2017-2025</p>
   </form>
   <script>
     // Palavra-passe válida
