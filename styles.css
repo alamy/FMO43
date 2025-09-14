@@ -1,3 +1,131 @@
+body, body.text-center {
+  background: #000 !important;
+  color: #fff !important;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.form-signin, .card, .feed-card, .container, .content {
+  background: #181a20 !important;
+  color: #fff !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  padding: 20px 16px !important;
+  margin-bottom: 18px;
+}
+
+.form-signin {
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-signin img {
+  margin-bottom: 18px;
+}
+
+  .form-signin h1 {
+    color: #fff;
+    margin-bottom: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+.form-signin label {
+  color: #b0b0b0;
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+.form-signin input[type="password"] {
+  background: #101014;
+  color: #fff;
+  border: 1.5px solid #23242b;
+  border-radius: 5px;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  width: 100%;
+  font-size: 1.08rem;
+  outline: none;
+  transition: border 0.2s;
+}
+.form-signin input[type="password"]::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+}
+.form-signin input[type="password"]:focus {
+  border: 1.5px solid #fff;
+}
+
+.form-signin button {
+  background: #23242b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 0;
+  width: 100%;
+  font-size: 1.08rem;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.form-signin button:hover {
+  background: #31313a;
+  color: #fff;
+}
+
+.form-signin p {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 18px;
+}
+
+/* Cards/feed padrão para Home, Pilula, Biblioteca */
+.feed-card, .card, .content, .container {
+  background: #181a20 !important;
+  color: #f8f8f8 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  padding: 20px 16px !important;
+  margin-bottom: 18px;
+}
+
+.feed-card .categoria, .card .categoria, .content .categoria {
+  color: #e0e0e0;
+  font-size: 0.98em;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.feed-card h3, .card h3, .content h3 {
+  color: #fff;
+  font-size: 1.08em;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.bottom-nav {
+  background: #181a20 !important;
+  border-top: 1.5px solid #23242b;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.18);
+}
+.bottom-nav a {
+  color: #b0b0b0;
+  transition: color 0.2s;
+}
+.bottom-nav a.active, .bottom-nav a:hover {
+  color: #fff;
+}
+.material-icons {
+  color: #b0b0b0;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+}
 /* Padding lateral para o conteúdo principal em páginas mobile */
 .container {
   padding-left: 16px;

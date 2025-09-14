@@ -2,11 +2,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+	<script>
+		// Proteção de acesso: só permite acesso se usuário fez login
+		if (!localStorage.getItem('fmo43_autenticado')) {
+			window.location.href = 'index.html';
+		}
+	</script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Rede Social FMO43</title>
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="styles.css">
+			<link rel="stylesheet" href="styles.css">
+			<style>
+				body {
+					background: #181a20;
+					color: #f1f1f1;
+				}
+				.container, .feed-card, .content {
+					background: #23242b !important;
+					color: #f1f1f1 !important;
+					border-radius: 18px;
+					box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+				}
+				.bottom-nav {
+					background: #23242b;
+					border-top: 1.5px solid #222;
+					box-shadow: 0 -2px 16px rgba(0,0,0,0.25);
+				}
+				.bottom-nav a {
+					color: #fbc02d;
+					transition: color 0.2s;
+				}
+				.bottom-nav a.active, .bottom-nav a:hover {
+					color: #1976d2;
+				}
+				.material-icons {
+					color: #fbc02d;
+				}
+				h1, h2, h3, h4, h5, h6 {
+					color: #fbc02d;
+				}
+			</style>
 </head>
 <body>
 		<!-- Header -->
@@ -17,27 +53,48 @@
 
 		<!-- Feed -->
 		<main id="feed" class="container" style="margin-top:20px;margin-bottom:90px;">
-				<div class="card mb-3">
-						<div class="card-body">
-								<h5 class="card-title">Bem-vindo à rede social FMO43!</h5>
-								<p class="card-text">Aqui você acompanha novidades, comunicados e conteúdos exclusivos.</p>
-						</div>
-				</div>
-				<div class="card mb-3">
-						<div class="card-body">
-								<h5 class="card-title">Comunicado</h5>
-								<p class="card-text">Reunião extraordinária dia 20/09 às 19h.</p>
-								<small class="text-muted">há 2 horas</small>
-						</div>
-				</div>
-				<div class="card mb-3">
-						<div class="card-body">
-								<h5 class="card-title">Pílula de Sabedoria</h5>
-								<p class="card-text">"O conhecimento é a chave para a liberdade."</p>
-								<small class="text-muted">há 1 dia</small>
-						</div>
-				</div>
-		</main>
+		<div class="card mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Bem-vindo à rede social FMO43!</h5>
+				<p class="card-text">Aqui você acompanha novidades, comunicados e conteúdos exclusivos.</p>
+			</div>
+		</div>
+		<div class="card mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Reunião de Aprendiz</h5>
+				<p class="card-text">Reunião de Aprendiz nesta terça-feira, dia 16.</p>
+				<small class="text-muted">há 2 horas</small>
+			</div>
+		</div>
+		<div class="card mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Baile da Grande Loja</h5>
+				<p class="card-text">O Baile da Grande Loja acontecerá em 4 de outubro.</p>
+				<small class="text-muted">há 1 dia</small>
+			</div>
+		</div>
+		<div class="card mb-3" id="pilula-card">
+			<div class="card-body">
+				<h5 class="card-title">Pílula do Dia</h5>
+				<p class="card-text" id="pilula-text">Carregando...</p>
+			</div>
+		</div>
+				</main>
+				<script>
+				// Exibe a pílula do dia na Home
+				fetch('pilula.json')
+					.then(r => r.json())
+					.then(pilulas => {
+						// Seleção baseada no dia do ano
+						const hoje = new Date();
+						const diaAno = Math.floor((hoje - new Date(hoje.getFullYear(), 0, 0)) / 86400000);
+						const pilula = pilulas[diaAno % pilulas.length];
+						document.getElementById('pilula-text').textContent = pilula.Mensagem;
+					})
+					.catch(() => {
+						document.getElementById('pilula-text').textContent = 'Não foi possível carregar a pílula.';
+					});
+				</script>
 
 			<!-- Menu fixo no rodapé com botão central destacado -->
 			<nav class="bottom-nav">
