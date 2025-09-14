@@ -1,28 +1,5 @@
-<<<<<<< HEAD
-{
-    "name": "FMO43",
-    "short_name": "FMO43",
-    "description": "FMO43 ",
-    "start_url": "/FMO43/index.html",
-    "display": "fullscreen",
-    "background_color": "#ffffff",
-    "theme_color": "#4CAF50",
-    "orientation": "portrait",
-    "icons": [
-      {
-        "src": "img/icon192x192.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "img/icon512x512.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "lang": "pt-BR"
-  }
-=======
+
+
 {
   "name": "FMO43 Social",
   "short_name": "FMO43",
@@ -46,4 +23,4 @@
   ],
   "lang": "pt-BR"
 }
->>>>>>> f72a789 (comentando)
+

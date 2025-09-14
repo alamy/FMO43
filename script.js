@@ -70,7 +70,6 @@ function adicionarPostNoFeed(texto) {
         `;
         feed.insertBefore(card, feed.firstChild);
 }
-// script.js
 
 // Palavra-passe válida
 const palavraCorreta = 'Jaquin';
@@ -79,21 +78,14 @@ const palavraCorreta = 'Jaquin';
 function verificarLogin(event) {
     event.preventDefault();
     const palavra = document.getElementById('palavra').value;
-<<<<<<< HEAD
-    alert(usuario);
-    // Verifica se o usuário existe no array
-    const usuarioEncontrado = usuarios.find(u => u.usuario == usuario && u.palavra === palavra);
-
-    if (usuarioEncontrado) {
-        // Redireciona para outra página se o login for bem-sucedido
-        window.location.href = 'https://alamy.github.io/FMO43/Home.html'; // Substitua pela URL desejada
-=======
     if (palavra === palavraCorreta) {
         window.location.href = 'Home.html';
->>>>>>> f72a789 (comentando)
     } else {
         alert('Palavra-passe incorreta');
     }
 }
 
-document.getElementById('loginForm').addEventListener('submit', verificarLogin);
+if (document.getElementById('loginForm')) {
+    document.getElementById('loginForm').addEventListener('submit', verificarLogin);
+}
+
