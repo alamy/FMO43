@@ -1,0 +1,94 @@
+/* Dashboard exclusivo para mobile paisagem */
+@media (orientation: landscape) {
+  html, body {
+    background: #101014;
+    color: #fff;
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .dashboard-center {
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0 0 32px 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  .dashboard-card {
+    background: #181a20;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+    padding: 32px 24px 18px 24px;
+    max-width: 480px;
+    width: 96vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 32px 0 18px 0;
+  }
+  .dashboard-content {
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+  }
+  h2, h3 {
+    color: #fff;
+    margin-bottom: 18px;
+    font-weight: 600;
+    text-align: center;
+  }
+  canvas {
+    background: #23242b;
+    border-radius: 12px;
+    margin: 0 auto 18px auto;
+    width: 98% !important;
+    max-width: 420px;
+    height: 220px !important;
+    display: block;
+  }
+  #painel-caixa {
+    background: #23242b;
+    border-radius: 12px;
+    margin: 0 auto 32px auto;
+    padding: 18px 18px;
+    max-width: 420px;
+    min-width: 220px;
+    font-size: 1.08em;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  }
+}
+
+@media (orientation: portrait) {
+  /* Oculta dashboard em pé, mostra aviso */
+  body:before {
+    content: 'Gire o dispositivo para o modo paisagem para acessar o dashboard.';
+    display: block;
+    color: #fff;
+    background: #181a20;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 60px 24px;
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+  }
+  .dashboard-center, .dashboard-card, .dashboard-content, #painel-caixa, canvas {
+    display: none !important;
+  }
+}

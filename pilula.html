@@ -58,16 +58,39 @@
     <div id="pilula-erro" style="display:none;color:#c00;text-align:center;margin-top:32px;">Não foi possível carregar a pílula de sabedoria.</div>
   </main>
     <nav class="bottom-nav">
-      <a href="Home.html" class="nav-item" id="menu-home">
-        <span class="material-icons">home</span>
-      </a>
-      <a href="https://drive.google.com/drive/folders/14IHt5NGieyxh2Mxb1N6gRFHF_065JTsP?usp=drive_link" class="nav-item" id="menu-biblioteca" target="_blank" rel="noopener noreferrer">
-        <span class="material-icons">menu_book</span>
-      </a>
-      <a href="pilula.html" class="nav-item active" id="menu-pilula">
-        <span class="material-icons">lightbulb</span>
-      </a>
-    </nav>
+      <nav class="bottom-nav" id="bottom-nav">
+        <a href="Home.html" class="nav-item" id="menu-home">
+          <span class="material-icons">home</span>
+        </a>
+        <a href="https://drive.google.com/drive/folders/14IHt5NGieyxh2Mxb1N6gRFHF_065JTsP?usp=drive_link" class="nav-item" id="menu-biblioteca" target="_blank" rel="noopener noreferrer">
+          <span class="material-icons">menu_book</span>
+        </a>
+        <a href="pilula.html" class="nav-item active" id="menu-pilula">
+          <span class="material-icons">lightbulb</span>
+        </a>
+      </nav>
+      <script>
+      // Exibe o menu Dashboard apenas para Mestre
+      document.addEventListener('DOMContentLoaded', function() {
+        const cim = localStorage.getItem('fmo43_cim');
+        if (cim) {
+          fetch('usuarios.json')
+            .then(r => r.json())
+            .then(usuarios => {
+              const usuario = usuarios.find(u => u.CIM === cim);
+              if (usuario && usuario.Grau === 'Mestre') {
+                const nav = document.getElementById('bottom-nav');
+                const dash = document.createElement('a');
+                dash.href = 'dashboard.html';
+                dash.className = 'nav-item';
+                dash.id = 'menu-dashboard';
+                dash.innerHTML = '<span class="material-icons">dashboard</span>';
+                nav.appendChild(dash);
+              }
+            });
+        }
+      });
+      </script>
 </body>
 <script src="pilula.js"></script>
 </html>

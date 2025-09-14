@@ -5,6 +5,14 @@ body, body.text-center {
   font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
+/* Centralização apenas para o login */
+.login-center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .form-signin, .card, .feed-card, .container, .content {
   background: #181a20 !important;
   color: #fff !important;

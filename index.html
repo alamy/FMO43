@@ -11,14 +11,37 @@
         background: #181a20;
         color: #f1f1f1;
       }
+      .login-input {
+        background: #101014;
+        color: #fff;
+        border: 1.5px solid #23242b;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 260px;
+        min-width: 180px;
+        height: 44px;
+        font-size: 1.08rem;
+        margin-bottom: 10px;
+        padding: 0 12px;
+        box-sizing: border-box;
+        font-family: inherit;
+        outline: none;
+        transition: border 0.2s;
+        display: block;
+      }
+      .login-input:focus {
+        border: 1.5px solid #fff;
+      }
     </style>
 </head>
-<body class="text-center">
+<body class="text-center login-center">
   <form class="form-signin" id="loginForm" autocomplete="off">
     <img class="mb-4" src="img/logo.png" alt="Logo" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Seja Bem-vindo</h1>
-    <label for="palavra" class="sr-only">Palavra-passe</label>
-    <input type="password" id="palavra" class="form-control" placeholder="Digite a palavra secreta" required>
+  <label for="cim" class="sr-only">CIM (opcional)</label>
+  <input type="text" id="cim" class="form-control login-input" placeholder="CIM (opcional)">
+  <label for="palavra" class="sr-only">Palavra-passe</label>
+  <input type="password" id="palavra" class="form-control login-input" placeholder="Digite a palavra secreta" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit" id="enviar">Entrar</button>
     <p class="mt-5 mb-3 text-muted">&copy; 2017-2025</p>
   </form>
@@ -28,8 +51,14 @@
     function verificarLogin(event) {
       event.preventDefault();
       const palavra = document.getElementById('palavra').value;
+      const cim = document.getElementById('cim').value.trim();
       if (palavra === palavraCorreta) {
         localStorage.setItem('fmo43_autenticado', '1');
+        if (cim) {
+          localStorage.setItem('fmo43_cim', cim);
+        } else {
+          localStorage.removeItem('fmo43_cim');
+        }
         window.location.href = 'Home.html';
       } else {
         alert('Palavra-passe incorreta');
