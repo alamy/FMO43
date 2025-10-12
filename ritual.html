@@ -19,9 +19,18 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden;line-height: 1.2em
   }
-
+  h1, h2, h3, h4,h5 {
+    width: 100%;
+    text-align: center;
+  }
+p {
+  font-size: 16px;
+  width: 100%;
+  text-align: justify;
+  line-height: 1.7; /* A altura da linha será 24px (16 * 1.5) */
+}
   header {
     background: #2c3e50;
     color: white;
@@ -98,7 +107,7 @@
   /* Conteúdo */
   #conteudo {
     flex: 1;
-    padding: 20px;
+width: 100vw;
     background: #fff;
     overflow-y: auto;
   }
@@ -145,15 +154,18 @@
       display: block;
     }
   }
-
+  ul {
+    width: 100%;
+  }
+  
   .container {
-            max-width: 800px;
+            width: 100vw;
             margin: 0 auto;
             background: #fff;
             border: 1px solid #c0b298;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            
         }
         h1, h2 {
             font-family: 'Times New Roman', Times, serif;
@@ -212,24 +224,25 @@
   <div class="container">
     <aside id="menu"></aside>
     <section id="conteudo" style="padding:  20px 19px;">
-      <article style="text-align: center; margin-top: 170px;">
-
+      <article style="text-align: center; margin-top: 40px;">
+<img src="img/logo.png" alt="Logo" style="width:150px; height:auto; margin-top: 20px;">
  <h2>A∴R∴L∴S∴F∴M∴O∴43 </h2>
+ 
 <h3>Fundada em 23 de Agosto de 2007</h3>
 <br><br>
-<p>
+<p style="text-align: center;">
 RITUAL
 DO APRENDIZ MAÇOM</p>
 
 <br><br>
-<p>Segundo</p>
+<p style="text-align: center;">Segundo</p>
 
 
-<i>FRIEDRICH LUDWIG SCHRÖDER</i>
+<i style="text-align: center;">FRIEDRICH LUDWIG SCHRÖDER</i>
 
 <br><br>
 
-<p>
+<p style="text-align: center;">
 EDIÇÃO
 2025 </p>
 
